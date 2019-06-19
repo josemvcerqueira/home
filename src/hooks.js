@@ -9,7 +9,7 @@ export const useFetch = (url, initialState) => {
 		setResult(data);
 	};
 
-	useEffect(() => {
+	useEffect(async () => {
 		handleAPI();
 	}, []);
 

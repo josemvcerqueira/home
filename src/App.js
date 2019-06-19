@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import Joke from "./Joke";
 import Stories from "./Stories";
 
-function App() {
+const App = () => {
 	const [userQuery, setUserQuery] = useState("");
 
 	const updateUserQuery = event => {
@@ -38,6 +38,6 @@ function App() {
 			<Stories />
 		</div>
 	);
-}
+};
 
 export default App;
