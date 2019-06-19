@@ -1,22 +1,12 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+
+import { useFetch } from "./hooks";
 
 const Joke = props => {
-	const [joke, setJoke] = useState({});
-
-	const handleJokesAPI = async () => {
-		const response = await fetch(
-			"https://official-joke-api.appspot.com/jokes/random"
-		);
-		const data = await response.json();
-		setJoke(data);
-	};
-
-	// empty array has a 2nd argument = componentDidMount
-	useEffect(() => {
-		handleJokesAPI();
-	}, []);
-
-	const { setup, punchline } = joke;
+	const { setup, punchline } = useFetch(
+		"https://official-joke-api.appspot.com/jokes/random",
+		{}
+	);
 
 	return (
 		<div>
